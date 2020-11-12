@@ -15,6 +15,7 @@ namespace Integriti_REST
     public partial class frmMain : Form
     {
         string url = "";
+        string controllerID = "";
         public frmMain()
         {
             InitializeComponent();
@@ -53,13 +54,15 @@ namespace Integriti_REST
 
             }
         }
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            url = tbUrl.Text;
+            controllerID = tbControllerID.Text;
+        }
+
         static string SendXML(string xmlMessage, string url)
         {
             return restRequest("POST", xmlMessage, url, "text/xml;charset=utf-8");
-        }
-        private void btnUrl_click(object sender, EventArgs e)
-        {
-            url = tbUrl.Text;
         }
         private void btnXmlFromFile_Click(object sender, EventArgs e)
         {
@@ -76,16 +79,14 @@ namespace Integriti_REST
         {
             tbXmlResult.Text = SendXML(tbXml.Text, url);
         }
-
-        
-
         private void btnControlInputSend_Click(object sender, EventArgs e)
         {
             if (cbControlInputState.SelectedIndex == 0) {
-                tbXmlResult.Text = restRequest("GET", "", (url + "Control/TriggerInput?Controller=" + tbControlInputControllerID.Text + "&Address=" + tbControlInputInputID.Text + "&Action=Trigger&InputState=InAlarm"));
+                tbXmlResult.Text = restRequest("GET", "", (url + "Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Trigger&InputState=InAlarm"));
             } else if (cbControlInputState.SelectedIndex == 1) {
-                tbXmlResult.Text = restRequest("GET", "", (url + "Control/TriggerInput?Controller=" + tbControlInputControllerID.Text + "&Address=" + tbControlInputInputID.Text + "&Action=Restore&InputState=InAlarm"));
+                tbXmlResult.Text = restRequest("GET", "", (url + "Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Restore&InputState=InAlarm"));
             }
         }
+
     }
 }
