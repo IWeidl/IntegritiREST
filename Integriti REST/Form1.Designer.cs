@@ -40,7 +40,13 @@
             this.tbControlInputInputID = new System.Windows.Forms.TextBox();
             this.cbControlInputState = new System.Windows.Forms.ComboBox();
             this.btnControlInputSend = new System.Windows.Forms.Button();
+            this.gbControlArea = new System.Windows.Forms.GroupBox();
+            this.btnControlAreaSend = new System.Windows.Forms.Button();
+            this.cbControlAreaState = new System.Windows.Forms.ComboBox();
+            this.tbControlAreaAreaID = new System.Windows.Forms.TextBox();
+            this.lblControlAreaAreaID = new System.Windows.Forms.Label();
             this.gbTriggerInput.SuspendLayout();
+            this.gbControlArea.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbUrl
@@ -167,11 +173,63 @@
             this.btnControlInputSend.UseVisualStyleBackColor = true;
             this.btnControlInputSend.Click += new System.EventHandler(this.btnControlInputSend_Click);
             // 
+            // gbControlArea
+            // 
+            this.gbControlArea.Controls.Add(this.btnControlAreaSend);
+            this.gbControlArea.Controls.Add(this.cbControlAreaState);
+            this.gbControlArea.Controls.Add(this.tbControlAreaAreaID);
+            this.gbControlArea.Controls.Add(this.lblControlAreaAreaID);
+            this.gbControlArea.Location = new System.Drawing.Point(342, 134);
+            this.gbControlArea.Name = "gbControlArea";
+            this.gbControlArea.Size = new System.Drawing.Size(143, 116);
+            this.gbControlArea.TabIndex = 6;
+            this.gbControlArea.TabStop = false;
+            this.gbControlArea.Text = "Control Area";
+            // 
+            // btnControlAreaSend
+            // 
+            this.btnControlAreaSend.Location = new System.Drawing.Point(57, 79);
+            this.btnControlAreaSend.Name = "btnControlAreaSend";
+            this.btnControlAreaSend.Size = new System.Drawing.Size(75, 23);
+            this.btnControlAreaSend.TabIndex = 4;
+            this.btnControlAreaSend.Text = "Send";
+            this.btnControlAreaSend.UseVisualStyleBackColor = true;
+            this.btnControlAreaSend.Click += new System.EventHandler(this.btnControlAreaSend_Click);
+            // 
+            // cbControlAreaState
+            // 
+            this.cbControlAreaState.FormattingEnabled = true;
+            this.cbControlAreaState.Items.AddRange(new object[] {
+            "Arm",
+            "Disarm"});
+            this.cbControlAreaState.Location = new System.Drawing.Point(57, 52);
+            this.cbControlAreaState.MaxDropDownItems = 2;
+            this.cbControlAreaState.Name = "cbControlAreaState";
+            this.cbControlAreaState.Size = new System.Drawing.Size(74, 21);
+            this.cbControlAreaState.TabIndex = 3;
+            // 
+            // tbControlAreaAreaID
+            // 
+            this.tbControlAreaAreaID.Location = new System.Drawing.Point(57, 26);
+            this.tbControlAreaAreaID.Name = "tbControlAreaAreaID";
+            this.tbControlAreaAreaID.Size = new System.Drawing.Size(74, 20);
+            this.tbControlAreaAreaID.TabIndex = 2;
+            // 
+            // lblControlAreaAreaID
+            // 
+            this.lblControlAreaAreaID.AutoSize = true;
+            this.lblControlAreaAreaID.Location = new System.Drawing.Point(6, 29);
+            this.lblControlAreaAreaID.Name = "lblControlAreaAreaID";
+            this.lblControlAreaAreaID.Size = new System.Drawing.Size(43, 13);
+            this.lblControlAreaAreaID.TabIndex = 1;
+            this.lblControlAreaAreaID.Text = "Area ID";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 498);
+            this.Controls.Add(this.gbControlArea);
             this.Controls.Add(this.gbTriggerInput);
             this.Controls.Add(this.tbXmlResult);
             this.Controls.Add(this.btnPostXml);
@@ -186,6 +244,8 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.gbTriggerInput.ResumeLayout(false);
             this.gbTriggerInput.PerformLayout();
+            this.gbControlArea.ResumeLayout(false);
+            this.gbControlArea.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +266,11 @@
         private System.Windows.Forms.TextBox tbControlInputInputID;
         private System.Windows.Forms.ComboBox cbControlInputState;
         private System.Windows.Forms.Button btnControlInputSend;
+        private System.Windows.Forms.GroupBox gbControlArea;
+        private System.Windows.Forms.Button btnControlAreaSend;
+        private System.Windows.Forms.ComboBox cbControlAreaState;
+        private System.Windows.Forms.TextBox tbControlAreaAreaID;
+        private System.Windows.Forms.Label lblControlAreaAreaID;
     }
 }
 

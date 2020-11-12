@@ -24,6 +24,7 @@ namespace Integriti_REST
         {
             url = "http://127.0.0.1/";
             cbControlInputState.SelectedIndex = 0;
+            cbControlAreaState.SelectedIndex = 0;
         }
         static string restRequest(string method, string message, string url, string contentType = "")
         {
@@ -88,5 +89,13 @@ namespace Integriti_REST
             }
         }
 
+        private void btnControlAreaSend_Click(object sender, EventArgs e)
+        {
+            if (cbControlAreaState.SelectedIndex == 0) {
+                tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Area?Controller=" + controllerID + "&Address=" + tbControlAreaAreaID.Text + "&Action=arm"));
+            } else if (cbControlAreaState.SelectedIndex == 1) {
+                tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Area?Controller=" + controllerID + "&Address=" + tbControlAreaAreaID.Text + "&Action=disarm"));
+            }
+        }
     }
 }
