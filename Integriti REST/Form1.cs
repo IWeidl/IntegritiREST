@@ -19,11 +19,16 @@ namespace Integriti_REST
         {
             InitializeComponent();
         }
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            url = "http://127.0.0.1/";
+            cbControlInputState.SelectedIndex = 0;
+        }
         static string restRequest(string method, string message, string url, string contentType = "")
         {
             try {
                 if (method.ToUpper() == "POST") {
-                    url += "/DB";
+                    url += "DB";
                 }
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 byte[] requestInFormOfBytes = System.Text.Encoding.ASCII.GetBytes(message);
@@ -70,6 +75,17 @@ namespace Integriti_REST
         private void btnPostXml_Click(object sender, EventArgs e)
         {
             tbXmlResult.Text = SendXML(tbXml.Text, url);
+        }
+
+        
+
+        private void btnControlInputSend_Click(object sender, EventArgs e)
+        {
+            if (cbControlInputState.SelectedIndex == 0) {
+                tbXmlResult.Text = restRequest("GET", "", (url + "Control/TriggerInput?Controller=" + tbControlInputControllerID.Text + "&Address=" + tbControlInputInputID.Text + "&Action=Trigger&InputState=InAlarm"));
+            } else if (cbControlInputState.SelectedIndex == 1) {
+                tbXmlResult.Text = restRequest("GET", "", (url + "Control/TriggerInput?Controller=" + tbControlInputControllerID.Text + "&Address=" + tbControlInputInputID.Text + "&Action=Restore&InputState=InAlarm"));
+            }
         }
     }
 }
