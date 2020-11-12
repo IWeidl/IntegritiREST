@@ -31,6 +31,8 @@
             this.btn_Url = new System.Windows.Forms.Button();
             this.tbXml = new System.Windows.Forms.TextBox();
             this.btnXmlFromFile = new System.Windows.Forms.Button();
+            this.btnPostXml = new System.Windows.Forms.Button();
+            this.tbXmlResult = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbUrl
@@ -61,7 +63,7 @@
             // 
             // btnXmlFromFile
             // 
-            this.btnXmlFromFile.Location = new System.Drawing.Point(12, 298);
+            this.btnXmlFromFile.Location = new System.Drawing.Point(155, 298);
             this.btnXmlFromFile.Name = "btnXmlFromFile";
             this.btnXmlFromFile.Size = new System.Drawing.Size(100, 23);
             this.btnXmlFromFile.TabIndex = 3;
@@ -69,11 +71,32 @@
             this.btnXmlFromFile.UseVisualStyleBackColor = true;
             this.btnXmlFromFile.Click += new System.EventHandler(this.btnXmlFromFile_Click);
             // 
+            // btnPostXml
+            // 
+            this.btnPostXml.Location = new System.Drawing.Point(261, 298);
+            this.btnPostXml.Name = "btnPostXml";
+            this.btnPostXml.Size = new System.Drawing.Size(75, 23);
+            this.btnPostXml.TabIndex = 4;
+            this.btnPostXml.Text = "Post XML";
+            this.btnPostXml.UseVisualStyleBackColor = true;
+            this.btnPostXml.Click += new System.EventHandler(this.btnPostXml_Click);
+            // 
+            // tbXmlResult
+            // 
+            this.tbXmlResult.Location = new System.Drawing.Point(12, 339);
+            this.tbXmlResult.Multiline = true;
+            this.tbXmlResult.Name = "tbXmlResult";
+            this.tbXmlResult.ReadOnly = true;
+            this.tbXmlResult.Size = new System.Drawing.Size(324, 147);
+            this.tbXmlResult.TabIndex = 5;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 498);
+            this.Controls.Add(this.tbXmlResult);
+            this.Controls.Add(this.btnPostXml);
             this.Controls.Add(this.btnXmlFromFile);
             this.Controls.Add(this.tbXml);
             this.Controls.Add(this.btn_Url);
@@ -91,6 +114,8 @@
         private System.Windows.Forms.Button btn_Url;
         private System.Windows.Forms.TextBox tbXml;
         private System.Windows.Forms.Button btnXmlFromFile;
+        private System.Windows.Forms.Button btnPostXml;
+        private System.Windows.Forms.TextBox tbXmlResult;
     }
 }
 

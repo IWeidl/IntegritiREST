@@ -48,9 +48,9 @@ namespace Integriti_REST
 
             }
         }
-        static void SendXML(string xmlMessage, string url)
+        static string SendXML(string xmlMessage, string url)
         {
-            Console.WriteLine(restRequest("POST", xmlMessage, url, "text/xml;charset=utf-8"));
+            return restRequest("POST", xmlMessage, url, "text/xml;charset=utf-8");
         }
         private void btnUrl_click(object sender, EventArgs e)
         {
@@ -65,6 +65,11 @@ namespace Integriti_REST
             if (xmlFileDialog.ShowDialog() == DialogResult.OK) {
                 tbXml.Text = File.ReadAllText(xmlFileDialog.FileName);
             }
+        }
+
+        private void btnPostXml_Click(object sender, EventArgs e)
+        {
+            tbXmlResult.Text = SendXML(tbXml.Text, url);
         }
     }
 }
