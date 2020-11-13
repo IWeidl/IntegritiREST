@@ -88,6 +88,10 @@
     <Content Include="AutoComplete.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Review Samples\AddEdit User 23.xml" />
+    <Content Include="Review Samples\New User.xml" />
+    <Content Include="Review Samples\Remove User 23%27s Cards.xml" />
+    <Content Include="Review Samples\Replace Users Card.xml" />
     <Content Include="Review Samples\Review Basic Text.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

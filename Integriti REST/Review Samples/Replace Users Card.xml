@@ -1,0 +1,10 @@
+﻿<User Address="U23">
+  <Cards>
+    <Card>
+      <CardNumber>123</CardNumber>
+      <CardType>
+        <Ref Type="CardTemplate" Partition="0" ID="TM1"></Ref>
+      </CardType>
+    </Card>
+  </Cards>
+</User>

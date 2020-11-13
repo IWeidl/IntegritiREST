@@ -1,0 +1,25 @@
+﻿<User Address="U23">
+  <Name>Daniel Barnet</Name>
+  <FirstName>Daniel</FirstName>
+  <SecondName>Barnet</SecondName>
+  <QualifyPinData>1716745472</QualifyPinData>
+  <CancelOnCard>False</CancelOnCard>
+  <Permissions>
+    <UserPermission>
+      <ID>5</ID>
+      <Deny>False</Deny>
+      <What>
+        <Ref Type="MenuGroup" ID="MG3" />
+      </What>
+      <Invert>False</Invert>
+      <When>
+        <Ref Type="TimePeriod" ID="TP1" />
+      </When>
+      <Arm>False</Arm>
+      <Disarm>False</Disarm>
+      <GrantAccess>False</GrantAccess>
+      <DoorEntryPermitted>False</DoorEntryPermitted>
+      <DoorExitPermitted>False</DoorExitPermitted>
+    </UserPermission>
+  </Permissions>
+</User>
