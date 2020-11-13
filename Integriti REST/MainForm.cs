@@ -14,6 +14,7 @@ namespace Integriti_REST
 {
     public partial class frmMain : Form
     {
+        FastColoredTextBoxNS.AutocompleteMenu popupMenu;
         string url = "";
         string controllerID = "";
         public frmMain()
@@ -34,6 +35,13 @@ namespace Integriti_REST
                 cbXmlSamples.Items.Add(Path.GetFileName(fileName).Substring(0, Path.GetFileName(fileName).Length-4));
             }
 
+            popupMenu = new FastColoredTextBoxNS.AutocompleteMenu(tbXml);
+            popupMenu.MinFragmentLength = 2;
+            var popupWords = new List<string>();
+            popupWords = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\AutoComplete.txt").ToList();
+            popupMenu.Items.SetAutocompleteItems(popupWords);
+            popupMenu.Items.MaximumSize = new System.Drawing.Size(200, 300);
+            popupMenu.Items.Width = 200;
         }
         static string restRequest(string method, string message, string url, string contentType = "")
         {
@@ -119,6 +127,10 @@ namespace Integriti_REST
             } else if (cbControlAuxState.SelectedIndex == 1) {
                 tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Aux?Controller=" + controllerID + "&Address=" + tbControlAuxAuxID.Text + "&Action=Off"));
             }
+        }
+
+        private void tbXml_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
+        {
         }
     }
 }

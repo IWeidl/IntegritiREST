@@ -27,9 +27,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tbUrl = new System.Windows.Forms.TextBox();
             this.btnSet = new System.Windows.Forms.Button();
-            this.tbXml = new System.Windows.Forms.TextBox();
             this.btnXmlFromFile = new System.Windows.Forms.Button();
             this.btnPostXml = new System.Windows.Forms.Button();
             this.tbXmlResult = new System.Windows.Forms.TextBox();
@@ -51,9 +52,11 @@
             this.cbControlAuxState = new System.Windows.Forms.ComboBox();
             this.tbControlAuxAuxID = new System.Windows.Forms.TextBox();
             this.lblControlAuxAuxID = new System.Windows.Forms.Label();
+            this.tbXml = new FastColoredTextBoxNS.FastColoredTextBox();
             this.gbTriggerInput.SuspendLayout();
             this.gbControlArea.SuspendLayout();
             this.gbControlAux.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbXml)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUrl
@@ -73,14 +76,6 @@
             this.btnSet.Text = "Set";
             this.btnSet.UseVisualStyleBackColor = true;
             this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
-            // 
-            // tbXml
-            // 
-            this.tbXml.Location = new System.Drawing.Point(12, 41);
-            this.tbXml.Multiline = true;
-            this.tbXml.Name = "tbXml";
-            this.tbXml.Size = new System.Drawing.Size(324, 251);
-            this.tbXml.TabIndex = 2;
             // 
             // btnXmlFromFile
             // 
@@ -293,11 +288,47 @@
             this.lblControlAuxAuxID.TabIndex = 1;
             this.lblControlAuxAuxID.Text = "Aux ID";
             // 
+            // tbXml
+            // 
+            this.tbXml.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\'',
+        '<',
+        '>'};
+            this.tbXml.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            this.tbXml.BackBrush = null;
+            this.tbXml.CharHeight = 14;
+            this.tbXml.CharWidth = 8;
+            this.tbXml.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbXml.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.tbXml.IsReplaceMode = false;
+            this.tbXml.Language = FastColoredTextBoxNS.Language.XML;
+            this.tbXml.LeftBracket = '<';
+            this.tbXml.Location = new System.Drawing.Point(12, 38);
+            this.tbXml.Name = "tbXml";
+            this.tbXml.Paddings = new System.Windows.Forms.Padding(0);
+            this.tbXml.RightBracket = '>';
+            this.tbXml.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.tbXml.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("tbXml.ServiceColors")));
+            this.tbXml.Size = new System.Drawing.Size(324, 254);
+            this.tbXml.TabIndex = 9;
+            this.tbXml.Zoom = 100;
+            this.tbXml.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.tbXml_TextChanged);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 498);
+            this.Controls.Add(this.tbXml);
             this.Controls.Add(this.gbControlAux);
             this.Controls.Add(this.cbXmlSamples);
             this.Controls.Add(this.gbControlArea);
@@ -307,7 +338,6 @@
             this.Controls.Add(this.tbControllerID);
             this.Controls.Add(this.lblControllerID);
             this.Controls.Add(this.btnXmlFromFile);
-            this.Controls.Add(this.tbXml);
             this.Controls.Add(this.btnSet);
             this.Controls.Add(this.tbUrl);
             this.Name = "frmMain";
@@ -319,6 +349,7 @@
             this.gbControlArea.PerformLayout();
             this.gbControlAux.ResumeLayout(false);
             this.gbControlAux.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbXml)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,7 +359,6 @@
 
         private System.Windows.Forms.TextBox tbUrl;
         private System.Windows.Forms.Button btnSet;
-        private System.Windows.Forms.TextBox tbXml;
         private System.Windows.Forms.Button btnXmlFromFile;
         private System.Windows.Forms.Button btnPostXml;
         private System.Windows.Forms.TextBox tbXmlResult;
@@ -350,6 +380,7 @@
         private System.Windows.Forms.ComboBox cbControlAuxState;
         private System.Windows.Forms.TextBox tbControlAuxAuxID;
         private System.Windows.Forms.Label lblControlAuxAuxID;
+        private FastColoredTextBoxNS.FastColoredTextBox tbXml;
     }
 }
 
