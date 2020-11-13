@@ -79,7 +79,7 @@
             // 
             // btnXmlFromFile
             // 
-            this.btnXmlFromFile.Location = new System.Drawing.Point(155, 298);
+            this.btnXmlFromFile.Location = new System.Drawing.Point(155, 196);
             this.btnXmlFromFile.Name = "btnXmlFromFile";
             this.btnXmlFromFile.Size = new System.Drawing.Size(100, 23);
             this.btnXmlFromFile.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             // btnPostXml
             // 
-            this.btnPostXml.Location = new System.Drawing.Point(261, 298);
+            this.btnPostXml.Location = new System.Drawing.Point(699, 196);
             this.btnPostXml.Name = "btnPostXml";
             this.btnPostXml.Size = new System.Drawing.Size(75, 23);
             this.btnPostXml.TabIndex = 4;
@@ -99,12 +99,12 @@
             // 
             // tbXmlResult
             // 
-            this.tbXmlResult.Location = new System.Drawing.Point(12, 327);
+            this.tbXmlResult.Location = new System.Drawing.Point(12, 390);
             this.tbXmlResult.Multiline = true;
             this.tbXmlResult.Name = "tbXmlResult";
             this.tbXmlResult.ReadOnly = true;
             this.tbXmlResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbXmlResult.Size = new System.Drawing.Size(708, 159);
+            this.tbXmlResult.Size = new System.Drawing.Size(762, 159);
             this.tbXmlResult.TabIndex = 5;
             this.tbXmlResult.WordWrap = false;
             // 
@@ -114,7 +114,7 @@
             this.gbTriggerInput.Controls.Add(this.cbControlInputState);
             this.gbTriggerInput.Controls.Add(this.tbControlInputInputID);
             this.gbTriggerInput.Controls.Add(this.tbTriggerInputInputID);
-            this.gbTriggerInput.Location = new System.Drawing.Point(342, 12);
+            this.gbTriggerInput.Location = new System.Drawing.Point(12, 53);
             this.gbTriggerInput.Name = "gbTriggerInput";
             this.gbTriggerInput.Size = new System.Drawing.Size(143, 116);
             this.gbTriggerInput.TabIndex = 6;
@@ -181,7 +181,7 @@
             this.gbControlArea.Controls.Add(this.cbControlAreaState);
             this.gbControlArea.Controls.Add(this.tbControlAreaAreaID);
             this.gbControlArea.Controls.Add(this.lblControlAreaAreaID);
-            this.gbControlArea.Location = new System.Drawing.Point(342, 134);
+            this.gbControlArea.Location = new System.Drawing.Point(310, 50);
             this.gbControlArea.Name = "gbControlArea";
             this.gbControlArea.Size = new System.Drawing.Size(143, 116);
             this.gbControlArea.TabIndex = 6;
@@ -230,7 +230,7 @@
             // 
             this.cbXmlSamples.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbXmlSamples.FormattingEnabled = true;
-            this.cbXmlSamples.Location = new System.Drawing.Point(12, 300);
+            this.cbXmlSamples.Location = new System.Drawing.Point(12, 198);
             this.cbXmlSamples.Name = "cbXmlSamples";
             this.cbXmlSamples.Size = new System.Drawing.Size(137, 21);
             this.cbXmlSamples.TabIndex = 7;
@@ -243,7 +243,7 @@
             this.gbControlAux.Controls.Add(this.cbControlAuxState);
             this.gbControlAux.Controls.Add(this.tbControlAuxAuxID);
             this.gbControlAux.Controls.Add(this.lblControlAuxAuxID);
-            this.gbControlAux.Location = new System.Drawing.Point(491, 12);
+            this.gbControlAux.Location = new System.Drawing.Point(161, 53);
             this.gbControlAux.Name = "gbControlAux";
             this.gbControlAux.Size = new System.Drawing.Size(143, 116);
             this.gbControlAux.TabIndex = 8;
@@ -303,22 +303,27 @@
         '\'',
         '<',
         '>'};
+            this.tbXml.AutoIndentCharsPatterns = "";
             this.tbXml.AutoScrollMinSize = new System.Drawing.Size(27, 14);
             this.tbXml.BackBrush = null;
             this.tbXml.CharHeight = 14;
             this.tbXml.CharWidth = 8;
+            this.tbXml.CommentPrefix = null;
             this.tbXml.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbXml.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.tbXml.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.tbXml.IsReplaceMode = false;
             this.tbXml.Language = FastColoredTextBoxNS.Language.XML;
             this.tbXml.LeftBracket = '<';
-            this.tbXml.Location = new System.Drawing.Point(12, 38);
+            this.tbXml.LeftBracket2 = '(';
+            this.tbXml.Location = new System.Drawing.Point(12, 225);
             this.tbXml.Name = "tbXml";
             this.tbXml.Paddings = new System.Windows.Forms.Padding(0);
             this.tbXml.RightBracket = '>';
+            this.tbXml.RightBracket2 = ')';
             this.tbXml.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.tbXml.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("tbXml.ServiceColors")));
-            this.tbXml.Size = new System.Drawing.Size(324, 254);
+            this.tbXml.Size = new System.Drawing.Size(760, 163);
             this.tbXml.TabIndex = 9;
             this.tbXml.Zoom = 100;
             this.tbXml.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.tbXml_TextChanged);
@@ -327,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 498);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tbXml);
             this.Controls.Add(this.gbControlAux);
             this.Controls.Add(this.cbXmlSamples);
