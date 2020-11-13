@@ -34,19 +34,26 @@
             this.btnPostXml = new System.Windows.Forms.Button();
             this.tbXmlResult = new System.Windows.Forms.TextBox();
             this.gbTriggerInput = new System.Windows.Forms.GroupBox();
+            this.btnControlInputSend = new System.Windows.Forms.Button();
+            this.cbControlInputState = new System.Windows.Forms.ComboBox();
+            this.tbControlInputInputID = new System.Windows.Forms.TextBox();
             this.tbTriggerInputInputID = new System.Windows.Forms.Label();
             this.lblControllerID = new System.Windows.Forms.Label();
             this.tbControllerID = new System.Windows.Forms.TextBox();
-            this.tbControlInputInputID = new System.Windows.Forms.TextBox();
-            this.cbControlInputState = new System.Windows.Forms.ComboBox();
-            this.btnControlInputSend = new System.Windows.Forms.Button();
             this.gbControlArea = new System.Windows.Forms.GroupBox();
             this.btnControlAreaSend = new System.Windows.Forms.Button();
             this.cbControlAreaState = new System.Windows.Forms.ComboBox();
             this.tbControlAreaAreaID = new System.Windows.Forms.TextBox();
             this.lblControlAreaAreaID = new System.Windows.Forms.Label();
+            this.cbXmlSamples = new System.Windows.Forms.ComboBox();
+            this.gbControlAux = new System.Windows.Forms.GroupBox();
+            this.btnControlAuxSend = new System.Windows.Forms.Button();
+            this.cbControlAuxState = new System.Windows.Forms.ComboBox();
+            this.tbControlAuxAuxID = new System.Windows.Forms.TextBox();
+            this.lblControlAuxAuxID = new System.Windows.Forms.Label();
             this.gbTriggerInput.SuspendLayout();
             this.gbControlArea.SuspendLayout();
+            this.gbControlAux.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbUrl
@@ -119,6 +126,35 @@
             this.gbTriggerInput.TabStop = false;
             this.gbTriggerInput.Text = "Control Input";
             // 
+            // btnControlInputSend
+            // 
+            this.btnControlInputSend.Location = new System.Drawing.Point(57, 79);
+            this.btnControlInputSend.Name = "btnControlInputSend";
+            this.btnControlInputSend.Size = new System.Drawing.Size(75, 23);
+            this.btnControlInputSend.TabIndex = 4;
+            this.btnControlInputSend.Text = "Send";
+            this.btnControlInputSend.UseVisualStyleBackColor = true;
+            this.btnControlInputSend.Click += new System.EventHandler(this.btnControlInputSend_Click);
+            // 
+            // cbControlInputState
+            // 
+            this.cbControlInputState.FormattingEnabled = true;
+            this.cbControlInputState.Items.AddRange(new object[] {
+            "Alarm",
+            "Restore"});
+            this.cbControlInputState.Location = new System.Drawing.Point(57, 52);
+            this.cbControlInputState.MaxDropDownItems = 2;
+            this.cbControlInputState.Name = "cbControlInputState";
+            this.cbControlInputState.Size = new System.Drawing.Size(74, 21);
+            this.cbControlInputState.TabIndex = 3;
+            // 
+            // tbControlInputInputID
+            // 
+            this.tbControlInputInputID.Location = new System.Drawing.Point(57, 26);
+            this.tbControlInputInputID.Name = "tbControlInputInputID";
+            this.tbControlInputInputID.Size = new System.Drawing.Size(74, 20);
+            this.tbControlInputInputID.TabIndex = 2;
+            // 
             // tbTriggerInputInputID
             // 
             this.tbTriggerInputInputID.AutoSize = true;
@@ -143,35 +179,6 @@
             this.tbControllerID.Name = "tbControllerID";
             this.tbControllerID.Size = new System.Drawing.Size(74, 20);
             this.tbControllerID.TabIndex = 1;
-            // 
-            // tbControlInputInputID
-            // 
-            this.tbControlInputInputID.Location = new System.Drawing.Point(57, 26);
-            this.tbControlInputInputID.Name = "tbControlInputInputID";
-            this.tbControlInputInputID.Size = new System.Drawing.Size(74, 20);
-            this.tbControlInputInputID.TabIndex = 2;
-            // 
-            // cbControlInputState
-            // 
-            this.cbControlInputState.FormattingEnabled = true;
-            this.cbControlInputState.Items.AddRange(new object[] {
-            "Alarm",
-            "Restore"});
-            this.cbControlInputState.Location = new System.Drawing.Point(57, 52);
-            this.cbControlInputState.MaxDropDownItems = 2;
-            this.cbControlInputState.Name = "cbControlInputState";
-            this.cbControlInputState.Size = new System.Drawing.Size(74, 21);
-            this.cbControlInputState.TabIndex = 3;
-            // 
-            // btnControlInputSend
-            // 
-            this.btnControlInputSend.Location = new System.Drawing.Point(57, 79);
-            this.btnControlInputSend.Name = "btnControlInputSend";
-            this.btnControlInputSend.Size = new System.Drawing.Size(75, 23);
-            this.btnControlInputSend.TabIndex = 4;
-            this.btnControlInputSend.Text = "Send";
-            this.btnControlInputSend.UseVisualStyleBackColor = true;
-            this.btnControlInputSend.Click += new System.EventHandler(this.btnControlInputSend_Click);
             // 
             // gbControlArea
             // 
@@ -224,11 +231,77 @@
             this.lblControlAreaAreaID.TabIndex = 1;
             this.lblControlAreaAreaID.Text = "Area ID";
             // 
+            // cbXmlSamples
+            // 
+            this.cbXmlSamples.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbXmlSamples.FormattingEnabled = true;
+            this.cbXmlSamples.Items.AddRange(new object[] {
+            "Review Text"});
+            this.cbXmlSamples.Location = new System.Drawing.Point(12, 300);
+            this.cbXmlSamples.Name = "cbXmlSamples";
+            this.cbXmlSamples.Size = new System.Drawing.Size(137, 21);
+            this.cbXmlSamples.TabIndex = 7;
+            this.cbXmlSamples.Text = "Samples";
+            this.cbXmlSamples.SelectedIndexChanged += new System.EventHandler(this.cbXmlSamples_SelectedIndexChanged);
+            // 
+            // gbControlAux
+            // 
+            this.gbControlAux.Controls.Add(this.btnControlAuxSend);
+            this.gbControlAux.Controls.Add(this.cbControlAuxState);
+            this.gbControlAux.Controls.Add(this.tbControlAuxAuxID);
+            this.gbControlAux.Controls.Add(this.lblControlAuxAuxID);
+            this.gbControlAux.Location = new System.Drawing.Point(491, 15);
+            this.gbControlAux.Name = "gbControlAux";
+            this.gbControlAux.Size = new System.Drawing.Size(143, 116);
+            this.gbControlAux.TabIndex = 8;
+            this.gbControlAux.TabStop = false;
+            this.gbControlAux.Text = "Control Aux";
+            // 
+            // btnControlAuxSend
+            // 
+            this.btnControlAuxSend.Location = new System.Drawing.Point(57, 79);
+            this.btnControlAuxSend.Name = "btnControlAuxSend";
+            this.btnControlAuxSend.Size = new System.Drawing.Size(75, 23);
+            this.btnControlAuxSend.TabIndex = 4;
+            this.btnControlAuxSend.Text = "Send";
+            this.btnControlAuxSend.UseVisualStyleBackColor = true;
+            this.btnControlAuxSend.Click += new System.EventHandler(this.btnControlAuxSend_Click);
+            // 
+            // cbControlAuxState
+            // 
+            this.cbControlAuxState.FormattingEnabled = true;
+            this.cbControlAuxState.Items.AddRange(new object[] {
+            "On",
+            "Off"});
+            this.cbControlAuxState.Location = new System.Drawing.Point(57, 52);
+            this.cbControlAuxState.MaxDropDownItems = 2;
+            this.cbControlAuxState.Name = "cbControlAuxState";
+            this.cbControlAuxState.Size = new System.Drawing.Size(74, 21);
+            this.cbControlAuxState.TabIndex = 3;
+            // 
+            // tbControlAuxAuxID
+            // 
+            this.tbControlAuxAuxID.Location = new System.Drawing.Point(57, 26);
+            this.tbControlAuxAuxID.Name = "tbControlAuxAuxID";
+            this.tbControlAuxAuxID.Size = new System.Drawing.Size(74, 20);
+            this.tbControlAuxAuxID.TabIndex = 2;
+            // 
+            // lblControlAuxAuxID
+            // 
+            this.lblControlAuxAuxID.AutoSize = true;
+            this.lblControlAuxAuxID.Location = new System.Drawing.Point(6, 29);
+            this.lblControlAuxAuxID.Name = "lblControlAuxAuxID";
+            this.lblControlAuxAuxID.Size = new System.Drawing.Size(39, 13);
+            this.lblControlAuxAuxID.TabIndex = 1;
+            this.lblControlAuxAuxID.Text = "Aux ID";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 498);
+            this.Controls.Add(this.gbControlAux);
+            this.Controls.Add(this.cbXmlSamples);
             this.Controls.Add(this.gbControlArea);
             this.Controls.Add(this.gbTriggerInput);
             this.Controls.Add(this.tbXmlResult);
@@ -246,6 +319,8 @@
             this.gbTriggerInput.PerformLayout();
             this.gbControlArea.ResumeLayout(false);
             this.gbControlArea.PerformLayout();
+            this.gbControlAux.ResumeLayout(false);
+            this.gbControlAux.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,6 +346,12 @@
         private System.Windows.Forms.ComboBox cbControlAreaState;
         private System.Windows.Forms.TextBox tbControlAreaAreaID;
         private System.Windows.Forms.Label lblControlAreaAreaID;
+        private System.Windows.Forms.ComboBox cbXmlSamples;
+        private System.Windows.Forms.GroupBox gbControlAux;
+        private System.Windows.Forms.Button btnControlAuxSend;
+        private System.Windows.Forms.ComboBox cbControlAuxState;
+        private System.Windows.Forms.TextBox tbControlAuxAuxID;
+        private System.Windows.Forms.Label lblControlAuxAuxID;
     }
 }
 

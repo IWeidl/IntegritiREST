@@ -25,6 +25,7 @@ namespace Integriti_REST
             url = "http://127.0.0.1/";
             cbControlInputState.SelectedIndex = 0;
             cbControlAreaState.SelectedIndex = 0;
+            cbControlAuxState.SelectedIndex = 0;
         }
         static string restRequest(string method, string message, string url, string contentType = "")
         {
@@ -95,6 +96,22 @@ namespace Integriti_REST
                 tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Area?Controller=" + controllerID + "&Address=" + tbControlAreaAreaID.Text + "&Action=arm"));
             } else if (cbControlAreaState.SelectedIndex == 1) {
                 tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Area?Controller=" + controllerID + "&Address=" + tbControlAreaAreaID.Text + "&Action=disarm"));
+            }
+        }
+
+        private void cbXmlSamples_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbXmlSamples.SelectedIndex == 0) {
+                tbXml.Text = File.ReadAllText(Directory.GetCurrentDirectory() + "/XMLSamples/ReviewBasic.xml");
+            }
+        }
+
+        private void btnControlAuxSend_Click(object sender, EventArgs e)
+        {
+            if (cbControlAuxState.SelectedIndex == 0) {
+                tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Aux?Controller=" + controllerID + "&Address=" + tbControlAuxAuxID.Text + "&Action=On"));
+            } else if (cbControlAuxState.SelectedIndex == 1) {
+                tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Aux?Controller=" + controllerID + "&Address=" + tbControlAuxAuxID.Text + "&Action=Off"));
             }
         }
     }
