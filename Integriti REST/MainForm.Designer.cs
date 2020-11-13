@@ -235,8 +235,6 @@
             // 
             this.cbXmlSamples.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbXmlSamples.FormattingEnabled = true;
-            this.cbXmlSamples.Items.AddRange(new object[] {
-            "Review Text"});
             this.cbXmlSamples.Location = new System.Drawing.Point(12, 300);
             this.cbXmlSamples.Name = "cbXmlSamples";
             this.cbXmlSamples.Size = new System.Drawing.Size(137, 21);
@@ -250,7 +248,7 @@
             this.gbControlAux.Controls.Add(this.cbControlAuxState);
             this.gbControlAux.Controls.Add(this.tbControlAuxAuxID);
             this.gbControlAux.Controls.Add(this.lblControlAuxAuxID);
-            this.gbControlAux.Location = new System.Drawing.Point(491, 15);
+            this.gbControlAux.Location = new System.Drawing.Point(491, 12);
             this.gbControlAux.Name = "gbControlAux";
             this.gbControlAux.Size = new System.Drawing.Size(143, 116);
             this.gbControlAux.TabIndex = 8;

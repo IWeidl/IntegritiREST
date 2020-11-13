@@ -23,9 +23,17 @@ namespace Integriti_REST
         private void frmMain_Load(object sender, EventArgs e)
         {
             url = "http://127.0.0.1/";
+
+            // Set control boxes
             cbControlInputState.SelectedIndex = 0;
             cbControlAreaState.SelectedIndex = 0;
             cbControlAuxState.SelectedIndex = 0;
+
+            // Set Review Samples Control Box
+            foreach (string fileName in Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Review Samples\\")) {
+                cbXmlSamples.Items.Add(Path.GetFileName(fileName).Substring(0, Path.GetFileName(fileName).Length-4));
+            }
+
         }
         static string restRequest(string method, string message, string url, string contentType = "")
         {
@@ -101,9 +109,7 @@ namespace Integriti_REST
 
         private void cbXmlSamples_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbXmlSamples.SelectedIndex == 0) {
-                tbXml.Text = File.ReadAllText(Directory.GetCurrentDirectory() + "/XMLSamples/ReviewBasic.xml");
-            }
+            tbXml.Text = File.ReadAllText(Directory.GetCurrentDirectory() + "\\Review Samples\\" + cbXmlSamples.Text + ".xml");
         }
 
         private void btnControlAuxSend_Click(object sender, EventArgs e)
