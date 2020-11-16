@@ -53,6 +53,8 @@
             this.tbControlAuxAuxID = new System.Windows.Forms.TextBox();
             this.lblControlAuxAuxID = new System.Windows.Forms.Label();
             this.tbXml = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.tbCurrentUrl = new System.Windows.Forms.TextBox();
+            this.cbMethod = new System.Windows.Forms.ComboBox();
             this.gbTriggerInput.SuspendLayout();
             this.gbControlArea.SuspendLayout();
             this.gbControlAux.SuspendLayout();
@@ -65,7 +67,7 @@
             this.tbUrl.Name = "tbUrl";
             this.tbUrl.Size = new System.Drawing.Size(100, 20);
             this.tbUrl.TabIndex = 0;
-            this.tbUrl.Text = "http://127.0.0.1/";
+            this.tbUrl.Text = "http://127.0.0.1";
             // 
             // btnSet
             // 
@@ -79,9 +81,9 @@
             // 
             // btnXmlFromFile
             // 
-            this.btnXmlFromFile.Location = new System.Drawing.Point(155, 196);
+            this.btnXmlFromFile.Location = new System.Drawing.Point(673, 251);
             this.btnXmlFromFile.Name = "btnXmlFromFile";
-            this.btnXmlFromFile.Size = new System.Drawing.Size(100, 23);
+            this.btnXmlFromFile.Size = new System.Drawing.Size(99, 23);
             this.btnXmlFromFile.TabIndex = 3;
             this.btnXmlFromFile.Text = "Load From File";
             this.btnXmlFromFile.UseVisualStyleBackColor = true;
@@ -89,9 +91,9 @@
             // 
             // btnPostXml
             // 
-            this.btnPostXml.Location = new System.Drawing.Point(699, 196);
+            this.btnPostXml.Location = new System.Drawing.Point(673, 280);
             this.btnPostXml.Name = "btnPostXml";
-            this.btnPostXml.Size = new System.Drawing.Size(75, 23);
+            this.btnPostXml.Size = new System.Drawing.Size(99, 23);
             this.btnPostXml.TabIndex = 4;
             this.btnPostXml.Text = "Post XML";
             this.btnPostXml.UseVisualStyleBackColor = true;
@@ -230,9 +232,9 @@
             // 
             this.cbXmlSamples.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbXmlSamples.FormattingEnabled = true;
-            this.cbXmlSamples.Location = new System.Drawing.Point(12, 198);
+            this.cbXmlSamples.Location = new System.Drawing.Point(673, 226);
             this.cbXmlSamples.Name = "cbXmlSamples";
-            this.cbXmlSamples.Size = new System.Drawing.Size(137, 21);
+            this.cbXmlSamples.Size = new System.Drawing.Size(101, 21);
             this.cbXmlSamples.TabIndex = 7;
             this.cbXmlSamples.Text = "Samples";
             this.cbXmlSamples.SelectedIndexChanged += new System.EventHandler(this.cbXmlSamples_SelectedIndexChanged);
@@ -323,16 +325,37 @@
             this.tbXml.RightBracket2 = ')';
             this.tbXml.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.tbXml.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("tbXml.ServiceColors")));
-            this.tbXml.Size = new System.Drawing.Size(760, 163);
+            this.tbXml.Size = new System.Drawing.Size(655, 163);
             this.tbXml.TabIndex = 9;
             this.tbXml.Zoom = 100;
             this.tbXml.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.tbXml_TextChanged);
+            // 
+            // tbCurrentUrl
+            // 
+            this.tbCurrentUrl.Location = new System.Drawing.Point(21, 199);
+            this.tbCurrentUrl.Name = "tbCurrentUrl";
+            this.tbCurrentUrl.Size = new System.Drawing.Size(646, 20);
+            this.tbCurrentUrl.TabIndex = 10;
+            // 
+            // cbMethod
+            // 
+            this.cbMethod.FormattingEnabled = true;
+            this.cbMethod.Items.AddRange(new object[] {
+            "POST",
+            "GET",
+            "DELETE"});
+            this.cbMethod.Location = new System.Drawing.Point(673, 199);
+            this.cbMethod.Name = "cbMethod";
+            this.cbMethod.Size = new System.Drawing.Size(99, 21);
+            this.cbMethod.TabIndex = 11;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.cbMethod);
+            this.Controls.Add(this.tbCurrentUrl);
             this.Controls.Add(this.tbXml);
             this.Controls.Add(this.gbControlAux);
             this.Controls.Add(this.cbXmlSamples);
@@ -386,6 +409,8 @@
         private System.Windows.Forms.TextBox tbControlAuxAuxID;
         private System.Windows.Forms.Label lblControlAuxAuxID;
         private FastColoredTextBoxNS.FastColoredTextBox tbXml;
+        private System.Windows.Forms.TextBox tbCurrentUrl;
+        private System.Windows.Forms.ComboBox cbMethod;
     }
 }
 

@@ -23,12 +23,14 @@ namespace Integriti_REST
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-            url = "http://127.0.0.1/";
+            url = "http://127.0.0.1";
 
             // Set control boxes
             cbControlInputState.SelectedIndex = 0;
             cbControlAreaState.SelectedIndex = 0;
             cbControlAuxState.SelectedIndex = 0;
+            cbMethod.SelectedIndex = 0;
+            tbCurrentUrl.Text = url;
 
             // Set Review Samples Control Box
             foreach (string fileName in Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Review Samples\\")) {
@@ -47,7 +49,7 @@ namespace Integriti_REST
         {
             try {
                 if (method.ToUpper() == "POST") {
-                    url += "DB";
+                    url += "/DB";                    
                 }
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 byte[] requestInFormOfBytes = System.Text.Encoding.ASCII.GetBytes(message);
@@ -100,32 +102,39 @@ namespace Integriti_REST
         private void btnControlInputSend_Click(object sender, EventArgs e)
         {
             if (cbControlInputState.SelectedIndex == 0) {
-                tbXmlResult.Text = restRequest("GET", "", (url + "Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Trigger&InputState=InAlarm"));
+                tbCurrentUrl.Text = (url + "Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Trigger&InputState=InAlarm");
+                tbXmlResult.Text = restRequest("GET", "", tbCurrentUrl.Text);
             } else if (cbControlInputState.SelectedIndex == 1) {
-                tbXmlResult.Text = restRequest("GET", "", (url + "Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Restore&InputState=InAlarm"));
+                tbCurrentUrl.Text = (url + "Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Restore&InputState=InAlarm");
+                tbXmlResult.Text = restRequest("GET", "", tbCurrentUrl.Text);
             }
         }
 
         private void btnControlAreaSend_Click(object sender, EventArgs e)
         {
             if (cbControlAreaState.SelectedIndex == 0) {
-                tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Area?Controller=" + controllerID + "&Address=" + tbControlAreaAreaID.Text + "&Action=arm"));
+                tbCurrentUrl.Text = (url + "/Control/Area?Controller=" + controllerID + "&Address=" + tbControlAreaAreaID.Text + "&Action=arm");
+                tbXmlResult.Text = restRequest("GET", "", tbCurrentUrl.Text);
             } else if (cbControlAreaState.SelectedIndex == 1) {
-                tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Area?Controller=" + controllerID + "&Address=" + tbControlAreaAreaID.Text + "&Action=disarm"));
+                tbCurrentUrl.Text = (url + "/Control/Area?Controller=" + controllerID + "&Address=" + tbControlAreaAreaID.Text + "&Action=disarm");
+                tbXmlResult.Text = restRequest("GET", "", tbCurrentUrl.Text);
             }
         }
 
         private void cbXmlSamples_SelectedIndexChanged(object sender, EventArgs e)
         {
             tbXml.Text = File.ReadAllText(Directory.GetCurrentDirectory() + "\\Review Samples\\" + cbXmlSamples.Text + ".xml");
+            tbCurrentUrl.Text = tbUrl.Text + "/DB";
         }
 
         private void btnControlAuxSend_Click(object sender, EventArgs e)
         {
             if (cbControlAuxState.SelectedIndex == 0) {
-                tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Aux?Controller=" + controllerID + "&Address=" + tbControlAuxAuxID.Text + "&Action=On"));
+                tbCurrentUrl.Text = (url + "/Control/Aux?Controller=" + controllerID + "&Address=" + tbControlAuxAuxID.Text + "&Action=On");
+                tbXmlResult.Text = restRequest("GET", "", tbCurrentUrl.Text);
             } else if (cbControlAuxState.SelectedIndex == 1) {
-                tbXmlResult.Text = restRequest("GET", "", (url + "/Control/Aux?Controller=" + controllerID + "&Address=" + tbControlAuxAuxID.Text + "&Action=Off"));
+                tbCurrentUrl.Text = (url + "/Control/Aux?Controller=" + controllerID + "&Address=" + tbControlAuxAuxID.Text + "&Action=Off");
+                tbXmlResult.Text = restRequest("GET", "", tbCurrentUrl.Text);
             }
         }
 
