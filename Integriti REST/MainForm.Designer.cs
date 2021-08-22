@@ -101,12 +101,12 @@
             // 
             // tbXmlResult
             // 
-            this.tbXmlResult.Location = new System.Drawing.Point(12, 390);
+            this.tbXmlResult.Location = new System.Drawing.Point(30, 390);
             this.tbXmlResult.Multiline = true;
             this.tbXmlResult.Name = "tbXmlResult";
             this.tbXmlResult.ReadOnly = true;
             this.tbXmlResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbXmlResult.Size = new System.Drawing.Size(762, 159);
+            this.tbXmlResult.Size = new System.Drawing.Size(742, 159);
             this.tbXmlResult.TabIndex = 5;
             this.tbXmlResult.WordWrap = false;
             // 
@@ -313,7 +313,6 @@
             this.tbXml.CommentPrefix = null;
             this.tbXml.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbXml.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.tbXml.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.tbXml.IsReplaceMode = false;
             this.tbXml.Language = FastColoredTextBoxNS.Language.XML;
             this.tbXml.LeftBracket = '<';
@@ -332,9 +331,9 @@
             // 
             // tbCurrentUrl
             // 
-            this.tbCurrentUrl.Location = new System.Drawing.Point(21, 199);
+            this.tbCurrentUrl.Location = new System.Drawing.Point(30, 199);
             this.tbCurrentUrl.Name = "tbCurrentUrl";
-            this.tbCurrentUrl.Size = new System.Drawing.Size(646, 20);
+            this.tbCurrentUrl.Size = new System.Drawing.Size(637, 20);
             this.tbCurrentUrl.TabIndex = 10;
             // 
             // cbMethod
@@ -344,10 +343,11 @@
             "POST",
             "GET",
             "DELETE"});
-            this.cbMethod.Location = new System.Drawing.Point(673, 199);
+            this.cbMethod.Location = new System.Drawing.Point(675, 198);
             this.cbMethod.Name = "cbMethod";
             this.cbMethod.Size = new System.Drawing.Size(99, 21);
             this.cbMethod.TabIndex = 11;
+            this.cbMethod.SelectedIndexChanged += new System.EventHandler(this.cbMethod_SelectedIndexChanged);
             // 
             // frmMain
             // 
@@ -368,6 +368,8 @@
             this.Controls.Add(this.btnXmlFromFile);
             this.Controls.Add(this.btnSet);
             this.Controls.Add(this.tbUrl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "Integriti REST";
             this.Load += new System.EventHandler(this.frmMain_Load);

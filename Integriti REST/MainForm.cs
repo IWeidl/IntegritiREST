@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Integriti_REST
@@ -98,14 +93,15 @@ namespace Integriti_REST
         private void btnPostXml_Click(object sender, EventArgs e)
         {
             tbXmlResult.Text = SendXML(tbXml.Text, url);
+            tbCurrentUrl.Text = url;
         }
         private void btnControlInputSend_Click(object sender, EventArgs e)
         {
             if (cbControlInputState.SelectedIndex == 0) {
-                tbCurrentUrl.Text = (url + "Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Trigger&InputState=InAlarm");
+                tbCurrentUrl.Text = (url + "/Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Trigger&InputState=InAlarm");
                 tbXmlResult.Text = restRequest("GET", "", tbCurrentUrl.Text);
             } else if (cbControlInputState.SelectedIndex == 1) {
-                tbCurrentUrl.Text = (url + "Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Restore&InputState=InAlarm");
+                tbCurrentUrl.Text = (url + "/Control/TriggerInput?Controller=" + controllerID + "&Address=" + tbControlInputInputID.Text + "&Action=Restore&InputState=InAlarm");
                 tbXmlResult.Text = restRequest("GET", "", tbCurrentUrl.Text);
             }
         }
@@ -140,6 +136,11 @@ namespace Integriti_REST
 
         private void tbXml_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
         {
+        }
+
+        private void cbMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
