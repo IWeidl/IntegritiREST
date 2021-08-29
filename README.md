@@ -4,5 +4,7 @@ There isn't technically an easy interface to use for sending REST commands to In
 
 ## Installation
 This requires the relevant licenses and comms handlers to be setup on Integriti.
+
 This code is just standard C# using Winforms (.NET Framework 4.7.2).
+
 You should be able to just build the solution and run.
